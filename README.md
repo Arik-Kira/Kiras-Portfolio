@@ -1,2 +1,0 @@
-# kiras-portfolio
-My Portfolio

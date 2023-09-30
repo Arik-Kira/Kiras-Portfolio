@@ -1,0 +1,433 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: white;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+  --lightyellow: #fdefae;
+  --lightpink: #f6b0b1;
+  --cheese: #ec2025;
+}
+
+@font-face {
+  font-family: "Goo";
+  src: url("https://cdn.glitch.global/07082181-354b-4f87-a401-cbb40b94ab22/Goo.ttf?v=1693238052841");
+}
+
+@font-face {
+  font-family: blogger;
+  src: url("https://cdn.glitch.global/07082181-354b-4f87-a401-cbb40b94ab22/Blogger%20Sans-Bold.otf?v=1693238498943");
+}
+
+@font-face {
+  font-family: king;
+  src: url("https://cdn.glitch.global/07082181-354b-4f87-a401-cbb40b94ab22/Kingthings%20Hand.ttf?v=1693238363158");
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #fff;
+}
+
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  font-family: blogger;
+  background-color: var(--color-bg);
+  font-size: 18px;
+  text-align: center;
+  font-weight: thin;
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Very light scaling for our illustration */
+.title {
+  color: #2800ff;
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
+
+
+
+/* Button - Add it from the README instructions */
+button,
+input {
+  font-family: inherit;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+}
+
+/* Subheading */
+h2 {
+  color: #2800ff;
+}
+
+
+/*This is for styling divs*/
+.empty-div {
+  width: 400px;
+  height: 200px;
+}
+
+.menu-div {
+  border-right: 10px;
+  justify-content: center;
+}
+
+.pink-square {
+  background-color: lightpink;
+  border-radius: 25px;
+}
+
+.pink-square:hover {
+  box-shadow: 10px 10px var(--cheese);
+  outline: 2px solid lightyellow;
+  border-radius: 35px;
+}
+
+.pink-square a:hover {
+  color: lightyellow;
+}
+
+
+.lightpink-square {
+  background-color: var(--cheese);
+  border-radius: 25px;
+}
+
+.lightpink-square:hover {
+  box-shadow: 10px 10px lightpink;
+  outline: 2px solid lightyellow;
+  border-radius: 35px;
+}
+
+.lightpink-square a:hover {
+  color: lightpink;
+}
+
+.yellow-square {
+  background-color: lightyellow;
+  border-radius: 25px;
+}
+
+.yellow-square:hover {
+  box-shadow: 10px 10px lightpink;
+  outline: 2px solid var(--cheese);
+  border-radius: 35px;
+}
+
+.yellow-square a:hover{
+  
+  color: var(--cheese);
+}
+.spacing {
+  margin-top: 25px;
+}
+
+/*This is for styling grids*/
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: calc(-1 * 20px);
+  gap: 25px;
+}
+
+.grid-col {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.grid-col__item {
+  flex: none;
+  width: 100%;
+}
+
+.grid__item {
+  flex: none;
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: calc(33% - 25px);
+}
+
+.grid__item__dd {
+  width: 100%;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.heading01 {
+  text-align: center;
+}
+
+.banner-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.main-section {
+  padding-right: calc(33% / 2);
+  padding-left: calc(33% / 2);
+}
+
+.section-absolute {
+  padding-right: calc(33% / 2);
+  padding-left: calc(33% / 2);
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+/*gallery grid*/
+
+/*.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}*/
+
+.gallery {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  margin-top: 25px;
+}
+
+.gallery-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.img-width{
+  width: 100%;
+}
+
+.gallery .wide {
+  grid-row: span 1;
+  grid-column: span 2;
+ 
+}
+
+.gallery .wide02{
+  grid-row: span 1;
+  grid-column: span 3;
+}
+
+.gallery .tall {
+ grid-row: span 8;
+  grid-column: span 2;
+  
+}
+
+.gallery .tall02{
+  grid-row: span 14;
+  grid-column: span 2;
+}
+
+.gallery .big {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+.gallery .big-rect {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.gallery .rect {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.gallery .small-rect {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.gallery .square {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery > img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+/*Particles*/
+.particles-parent {
+  position: absolute;
+}
+
+.particles-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.particles {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.particles span {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  margin: 0 40px;
+  border-radius: 50%;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(10s / var(--i));
+}
+
+.particles span:nth-child(even) {
+  animation-duration: calc(10s / var(--i) * 2);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+  }
+
+  100% {
+    transform: translateY(-50vh) scale(1) rotate(360deg);
+  }
+}
+
+/*button styling*/
+
+/*footer*/
+
+.footer-section {
+  background-color: var(--cheese);
+  width: 100%;
+  height: 250px;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.footer-grid__item {
+  width: calc(33% - 25px);
+  text-align: center;
+}
+
+.intro {
+  font-size: 36pt;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-family: blogger;
+}
+
+.footer-img{
+ width: 70%;
+    height: 70%;
+  object-fit: contain;
+}
+
+.h1-pink{
+  color: var(--cheese);
+}
+
+
+
